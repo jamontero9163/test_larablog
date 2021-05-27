@@ -11,6 +11,8 @@
             CRUD
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{route('user.index')}}">Usuarios</a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{route('post.index')}}">Post</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{route('category.index')}}">Categorias</a>
@@ -20,11 +22,16 @@
       
 
       <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="dropdown-item" href="#">Login</a>
-        </li>
         <li>
-            <a class="dropdown-item" href="#">Logout</a>
+          <a class="nav-link" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+              {{ __('Logout') }}
+          </a>
+
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+              @csrf
+          </form>
         </li>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">

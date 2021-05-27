@@ -5,19 +5,9 @@
  */
 
 require('./bootstrap');
-const ClassicEditor = require('@ckeditor/ckeditor5-build-classic');
-
-//no muy importante funcion para caja de texto observaciones, contenido, etc
-ClassicEditor
-    .create( document.querySelector( '#content' ) )
-    .then( editor => {
-        console.log( editor );
-    } )
-    .catch( error => {
-        console.error( error );
-    } );
 
 window.Vue = require('vue').default;
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
